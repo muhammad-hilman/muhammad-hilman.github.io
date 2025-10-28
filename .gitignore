@@ -2,9 +2,7 @@
 
 # dependencies
 /node_modules
-/.vscode
 /.pnp
-/public
 .pnp.js
 
 # testing
@@ -23,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# files
+/public
+readme_react.md
+/.vscode
