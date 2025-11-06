@@ -1,27 +1,29 @@
-import React from 'react';
-import Message from './components/Messages';
+import React, { Fragment } from 'react';
+import CollapseSidebar from './components/SideBars';
 import ListGroup from './components/ListGroups';
 import Alert from './components/Alerts';
-import Button from './components/Buttons';
+import CollapseSidebarButton from './components/Buttons';
+import MainContentArea from './components/MainContentAreas';
 /*
 import logo from './logo.svg';
 import './App.css';
 */
 
 function App() {
-  let items = ["New York", "San Francisco", "Tokyo", "London", "Paris"];
-
-  // Event Handlers
-  const handleSelectItem = (item: string) => {
-    console.log(item);
-  }
+  let tabs = ["Home", "About Me", "Resume", "Projects", "Contact"];
 
   return (
-    <div>
-      <Alert>Hello World</Alert>
-      <ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem} />
-      <Button>Buss!</Button>
-    </div>
+    <>
+      <CollapseSidebar tabs={tabs}/>   
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col min-vh-100 p-4">
+            <CollapseSidebarButton />   
+            <MainContentArea />
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 
